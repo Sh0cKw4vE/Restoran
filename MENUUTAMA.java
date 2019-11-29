@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package uaspd2;
-
+import java.sql.*;
+import static uaspd2.Login.conn;
+import static uaspd2.Login.st;
 /**
  *
  * @author asus
@@ -513,7 +515,16 @@ public class MENUUTAMA extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(MENUUTAMA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        try {
+            
+            Class.forName("com.mysql.jdbc.Driver");
+            System.out.println("CONNECTED");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost/rest", "root", "");
+            st = conn.createStatement();
+        }
+        catch(Exception e){
+            System.out.println("ERROR"+e);
+        }
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
