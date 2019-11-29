@@ -7,8 +7,8 @@ import javax.swing.JOptionPane;
  * @author asus
  */
 public class Login extends javax.swing.JFrame {
-    static Connection conn = null;
-    static Statement st = null;
+    public static Connection conn = null;
+    public static Statement st = null;
     /**
      * Creates new form Login
      */
